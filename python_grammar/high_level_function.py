@@ -23,7 +23,10 @@ def is_palindrome(n):
     numberStr = str(n)
     length = len(numberStr)
     index = math.ceil(length/2.)
-    if numberStr[:length//2] == numberStr[index:]:
+    leftStr = numberStr[:length//2]
+    rightStr = numberStr[index:]
+    reverseRightStr = rightStr[::-1]#字符串反转
+    if leftStr == reverseRightStr:
         return True
     else:
         return False
