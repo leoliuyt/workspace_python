@@ -14,7 +14,7 @@ def calc(*numbers):
     sum = 0
     for x in numbers:
         sum += x
-    return sum;
+    return sum
 
 sum = calc(1,2,3,4,5,6,7)
 print("sum = ",sum)
