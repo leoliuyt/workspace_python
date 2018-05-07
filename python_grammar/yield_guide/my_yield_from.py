@@ -54,19 +54,38 @@
 # print('--------')
 # print('next2 = ',next(g))
 
-def g1():     
-     yield range(5)
-def g2():
-     yield  from range(5)
+# def g1():     
+#      yield range(5)
+# def g2():
+#      yield  from range(5)
 
-it1 = g1()
-it2 = g2()
-print(type(it1))
-print(type(it2))
-print('------------')
-for x in it1:
-    print(x)
-print('------------')
-for x in it2:
-    print(x)
+# it1 = g1()
+# it2 = g2()
+# print(type(it1))
+# print(type(it2))
+# print('------------')
+# for x in it1:
+#     print(x)
+# print('------------')
+# for x in it2:
+#     print(x)
 
+# # def fib(n):
+#     index,a,b = 0,0,1
+# 	while index < n :
+#         yield b
+# 		a, b = b, a + b
+# 		index += 1 
+def fib(n):
+    index,a,b = 0,0,1
+    while index < n:
+        yield b
+        a,b = b,a+b
+        index += 1
+def copy_fib(n):
+    print('I am copy from fib')
+    yield from fib(n)
+    print('Copy end')
+print('-'*10 + 'test yield from'+'-'*10)
+for fib_res in copy_fib(20):
+    print(fib_res)
